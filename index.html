@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Centered Course Title */
+    header {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    /* Tabs container */
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      background-color: #333;
+      scrollbar-width: thin; /* Firefox */
+    }
+
+    .tabs button {
+      flex: none;
+      background-color: inherit;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1em;
+      white-space: nowrap;
+    }
+
+    .tabs button:hover {
+      background-color: #575757;
+    }
+
+    .tabs button.active {
+      background-color: #4CAF50;
+    }
+
+    /* Content section */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background-color: white;
+      min-height: 400px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>My Awesome Course</header>
+
+<div class="tabs" id="tabs">
+  <button class="tab-link active" data-tab="syllabus">Syllabus</button>
+  <button class="tab-link" data-tab="tlep">TLEP</button>
+  <button class="tab-link" data-tab="module1">Module 1</button>
+  <button class="tab-link" data-tab="module2">Module 2</button>
+  <button class="tab-link" data-tab="module3">Module 3</button>
+  <button class="tab-link" data-tab="module4">Module 4</button>
+  <button class="tab-link" data-tab="module5">Module 5</button>
+  <button class="tab-link" data-tab="module6">Module 6</button>
+  <button class="tab-link" data-tab="module7">Module 7</button>
+  <button class="tab-link" data-tab="module8">Module 8</button>
+  <button class="tab-link" data-tab="module9">Module 9</button>
+  <button class="tab-link" data-tab="module10">Module 10</button>
+</div>
+
+<div id="syllabus" class="tab-content active">
+  <h2>Syllabus</h2>
+  <p>Content for syllabus goes here.</p>
+</div>
+
+<div id="tlep" class="tab-content">
+  <h2>TLEP</h2>
+  <p>Content for TLEP goes here.</p>
+</div>
+
+<div id="module1" class="tab-content">
+  <h2>Module 1</h2>
+  <p>Content for Module 1 goes here.</p>
+</div>
+
+<div id="module2" class="tab-content">
+  <h2>Module 2</h2>
+  <p>Content for Module 2 goes here.</p>
+</div>
+
+<div id="module3" class="tab-content">
+  <h2>Module 3</h2>
+  <p>Content for Module 3 goes here.</p>
+</div>
+
+<div id="module4" class="tab-content">
+  <h2>Module 4</h2>
+  <p>Content for Module 4 goes here.</p>
+</div>
+
+<div id="module5" class="tab-content">
+  <h2>Module 5</h2>
+  <p>Content for Module 5 goes here.</p>
+</div>
+
+<div id="module6" class="tab-content">
+  <h2>Module 6</h2>
+  <p>Content for Module 6 goes here.</p>
+</div>
+
+<div id="module7" class="tab-content">
+  <h2>Module 7</h2>
+  <p>Content for Module 7 goes here.</p>
+</div>
+
+<div id="module8" class="tab-content">
+  <h2>Module 8</h2>
+  <p>Content for Module 8 goes here.</p>
+</div>
+
+<div id="module9" class="tab-content">
+  <h2>Module 9</h2>
+  <p>Content for Module 9 goes here.</p>
+</div>
+
+<div id="module10" class="tab-content">
+  <h2>Module 10</h2>
+  <p>Content for Module 10 goes here.</p>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab-link");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs and contents
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+
+      // Add active class to clicked tab and corresponding content
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>
