@@ -61,13 +61,18 @@
     .tab-content.active {
       display: block;
     }
+
+    iframe {
+      width: 100%;
+      min-height: 800px;
+      border: none;
+    }
   </style>
 </head>
 <body>
 
 <header>My Awesome Course</header>
 
-<!-- Tabs -->
 <div class="tabs" id="tabs">
   <button class="tab-link active" data-tab="syllabus">Syllabus</button>
   <button class="tab-link" data-tab="tlep">TLEP</button>
@@ -78,10 +83,8 @@
   <button class="tab-link" data-tab="module5">Module 5</button>
 </div>
 
-<!-- Content sections -->
 <div id="syllabus" class="tab-content active">
-  <h2>Syllabus</h2>
-  <p>Content for syllabus goes here.</p>
+  <iframe src="syllabus.html"></iframe>
 </div>
 
 <div id="tlep" class="tab-content">
@@ -114,7 +117,6 @@
   <p>Content for Module 5 goes here.</p>
 </div>
 
-<!-- Tab switching script -->
 <script>
   const tabs = document.querySelectorAll(".tab-link");
   const contents = document.querySelectorAll(".tab-content");
