@@ -1,19 +1,147 @@
-<div class="tabs">
-  <button onclick="openTab('syllabus')">Syllabus</button>
-  <button onclick="openTab('tlep')">TLEP</button>
-  <button onclick="openTab('module1')">Module 1</button>
-  <button onclick="openTab('module2')">Module 2</button>
-  <button onclick="openTab('module3')">Module 3</button>
-  <button onclick="openTab('module4')">Module 4</button>
-  <button onclick="openTab('module5')">Module 5</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applied Research Techniques - Course Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .course-info {
+      text-align: center;
+      padding: 10px;
+      background-color: #e9f5e9;
+      font-size: 1.1em;
+      border-bottom: 2px solid #4CAF50;
+    }
+
+    .tabs {
+      display: flex;
+      background-color: #333;
+      overflow-x: auto;
+    }
+
+    .tabs button {
+      flex: none;
+      background-color: inherit;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1em;
+    }
+
+    .tabs button:hover {
+      background-color: #575757;
+    }
+
+    .tabs button.active {
+      background-color: #4CAF50;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+      background-color: white;
+      min-height: 600px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>APPLIED RESEARCH TECHNIQUES</header>
+
+<!-- Course details shown on all tabs -->
+<div class="course-info">
+  <strong>Semester:</strong> First &nbsp;&nbsp; | &nbsp;&nbsp;
+  <strong>Course Code:</strong> M.Com &nbsp;&nbsp; | &nbsp;&nbsp;
+  <strong>Credits:</strong> 4 &nbsp;&nbsp; | &nbsp;&nbsp;
+  <strong>No. of Hours:</strong> 60
 </div>
 
-<div id="tab-content" style="margin-top:20px;">
-  <iframe id="tab-frame" src="syllabus.html" style="width:100%; height:700px; border:none;"></iframe>
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab-link active" data-tab="syllabus">Syllabus</button>
+  <button class="tab-link" data-tab="tlep">TLEP</button>
+  <button class="tab-link" data-tab="module1">Module 1</button>
+  <button class="tab-link" data-tab="module2">Module 2</button>
+  <button class="tab-link" data-tab="module3">Module 3</button>
+  <button class="tab-link" data-tab="module4">Module 4</button>
+  <button class="tab-link" data-tab="module5">Module 5</button>
+</div>
+
+<!-- Tab Contents -->
+<div id="syllabus" class="tab-content active">
+  <iframe src="syllabus.html"></iframe>
+</div>
+
+<div id="tlep" class="tab-content">
+  <h2>TLEP</h2>
+  <p>Content for TLEP goes here.</p>
+</div>
+
+<div id="module1" class="tab-content">
+  <h2>Module 1</h2>
+  <p>Content for Module 1 goes here.</p>
+</div>
+
+<div id="module2" class="tab-content">
+  <h2>Module 2</h2>
+  <p>Content for Module 2 goes here.</p>
+</div>
+
+<div id="module3" class="tab-content">
+  <h2>Module 3</h2>
+  <p>Content for Module 3 goes here.</p>
+</div>
+
+<div id="module4" class="tab-content">
+  <h2>Module 4</h2>
+  <p>Content for Module 4 goes here.</p>
+</div>
+
+<div id="module5" class="tab-content">
+  <h2>Module 5</h2>
+  <p>Content for Module 5 goes here.</p>
 </div>
 
 <script>
-function openTab(tabName) {
-  document.getElementById('tab-frame').src = tabName + '.html';
-}
+  const tabs = document.querySelectorAll(".tab-link");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
 </script>
+
+</
