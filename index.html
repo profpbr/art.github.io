@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Applied Research Techniques - Course Page</title>
   <style>
-    body {
+    body {  
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -79,6 +79,29 @@
       height: 800px;
       border: none;
     }
+
+    /* Query Form Styles */
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    form button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -106,6 +129,7 @@
   <button class="tab-link" data-tab="module3">Module 3</button>
   <button class="tab-link" data-tab="module4">Module 4</button>
   <button class="tab-link" data-tab="module5">Module 5</button>
+  <button class="tab-link" data-tab="queries">Queries</button>
 </div>
 
 <!-- Tab Contents -->
@@ -137,8 +161,27 @@
   <p>Module 5 content coming soon.</p>
 </div>
 
-<!-- JavaScript for Tabs -->
+<!-- Queries Tab -->
+<div id="queries" class="tab-content">
+  <h2>Submit Your Query</h2>
+  <form id="queryForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="query">Your Query:</label>
+    <textarea id="query" name="query" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+  <p id="responseMessage" style="color:green; margin-top:10px;"></p>
+</div>
+
+<!-- JavaScript for Tabs and Form -->
 <script>
+  // Tabs
   const tabs = document.querySelectorAll(".tab-link");
   const contents = document.querySelectorAll(".tab-content");
 
@@ -149,6 +192,16 @@
       tab.classList.add("active");
       document.getElementById(tab.dataset.tab).classList.add("active");
     });
+  });
+
+  // Query Form Submission
+  const form = document.getElementById("queryForm");
+  const response = document.getElementById("responseMessage");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); // Prevent page reload
+    response.textContent = "Thank you! Your query has been submitted.";
+    form.reset();
   });
 </script>
 
