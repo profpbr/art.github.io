@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Page</title>
+  <title>Applied Research Techniques - Course Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,6 +19,14 @@
       padding: 20px 0;
       font-size: 2em;
       font-weight: bold;
+    }
+
+    .course-info {
+      text-align: center;
+      padding: 10px;
+      background-color: #e9f5e9;
+      font-size: 1.1em;
+      border-bottom: 2px solid #4CAF50;
     }
 
     .tabs {
@@ -66,8 +74,17 @@
 </head>
 <body>
 
-<header>My Awesome Course</header>
+<header>APPLIED RESEARCH TECHNIQUES</header>
 
+<!-- Course details shown on all tabs -->
+<div class="course-info">
+  <strong>Semester:</strong> First &nbsp;&nbsp; | &nbsp;&nbsp;
+  <strong>Course Code:</strong> M.Com &nbsp;&nbsp; | &nbsp;&nbsp;
+  <strong>Credits:</strong> 4 &nbsp;&nbsp; | &nbsp;&nbsp;
+  <strong>No. of Hours:</strong> 60
+</div>
+
+<!-- Tabs -->
 <div class="tabs">
   <button class="tab-link active" data-tab="syllabus">Syllabus</button>
   <button class="tab-link" data-tab="tlep">TLEP</button>
@@ -78,7 +95,7 @@
   <button class="tab-link" data-tab="module5">Module 5</button>
 </div>
 
-<!-- Syllabus tab loads syllabus.html -->
+<!-- Tab Contents -->
 <div id="syllabus" class="tab-content active">
   <iframe src="syllabus.html"></iframe>
 </div>
@@ -119,16 +136,12 @@
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
-      // Remove previous active classes
       tabs.forEach(t => t.classList.remove("active"));
       contents.forEach(c => c.classList.remove("active"));
-
-      // Add active to current tab and its content
       tab.classList.add("active");
       document.getElementById(tab.dataset.tab).classList.add("active");
     });
   });
 </script>
 
-</body>
-</html>
+</
