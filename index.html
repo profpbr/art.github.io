@@ -12,7 +12,6 @@
       background-color: #f9f9f9;
     }
 
-    /* Centered Course Title */
     header {
       text-align: center;
       background-color: #4CAF50;
@@ -22,12 +21,10 @@
       font-weight: bold;
     }
 
-    /* Tabs container */
     .tabs {
       display: flex;
-      overflow-x: auto;
       background-color: #333;
-      scrollbar-width: thin;
+      overflow-x: auto;
     }
 
     .tabs button {
@@ -39,7 +36,6 @@
       cursor: pointer;
       transition: background-color 0.3s;
       font-size: 1em;
-      white-space: nowrap;
     }
 
     .tabs button:hover {
@@ -50,12 +46,11 @@
       background-color: #4CAF50;
     }
 
-    /* Content section */
     .tab-content {
       display: none;
       padding: 20px;
       background-color: white;
-      min-height: 400px;
+      min-height: 600px;
     }
 
     .tab-content.active {
@@ -64,7 +59,7 @@
 
     iframe {
       width: 100%;
-      min-height: 800px;
+      height: 800px;
       border: none;
     }
   </style>
@@ -73,7 +68,7 @@
 
 <header>My Awesome Course</header>
 
-<div class="tabs" id="tabs">
+<div class="tabs">
   <button class="tab-link active" data-tab="syllabus">Syllabus</button>
   <button class="tab-link" data-tab="tlep">TLEP</button>
   <button class="tab-link" data-tab="module1">Module 1</button>
@@ -83,6 +78,7 @@
   <button class="tab-link" data-tab="module5">Module 5</button>
 </div>
 
+<!-- Syllabus tab loads syllabus.html -->
 <div id="syllabus" class="tab-content active">
   <iframe src="syllabus.html"></iframe>
 </div>
@@ -123,8 +119,11 @@
 
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
+      // Remove previous active classes
       tabs.forEach(t => t.classList.remove("active"));
       contents.forEach(c => c.classList.remove("active"));
+
+      // Add active to current tab and its content
       tab.classList.add("active");
       document.getElementById(tab.dataset.tab).classList.add("active");
     });
