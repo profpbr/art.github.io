@@ -13,32 +13,46 @@
       background-color: #f9f9f9;
     }
 
-    header {
+    /* ============================
+       SOC BLUE HEADER
+    ============================ */
+    .soc-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background-color: #4CAF50;
+      gap: 20px;
+      padding: 18px 20px;
+      background: #00AEEF;
       color: white;
-    }
-    header img {
-      height: 60px;
-      margin-right: 15px;
-      display: block;
-    }
-    header span {
-      font-size: 2em;
-      font-weight: bold;
+      border-bottom: 4px solid #007AB3;
     }
 
-    .course-info {
-      text-align: center;
-      padding: 10px;
-      background-color: #e9f5e9;
-      font-size: 1.1em;
-      border-bottom: 2px solid #4CAF50;
+    .soc-logo {
+      height: 70px;
+      width: auto;
     }
 
+    .soc-title .main-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .soc-title .sub-title {
+      font-size: 1rem;
+      margin-top: 4px;
+      opacity: 0.95;
+    }
+
+    .course-meta {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .course-meta span {
+      margin-right: 20px;
+    }
+
+    /* Tabs */
     .tabs {
       display: flex;
       background-color: #333;
@@ -57,7 +71,7 @@
       background-color: #575757;
     }
     .tabs button.active {
-      background-color: #4CAF50;
+      background-color: #00AEEF;
     }
 
     .tab-content {
@@ -88,13 +102,13 @@
       display: inline-block;
       margin: 8px;
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #00AEEF;
       color: white;
       text-decoration: none;
       border-radius: 5px;
     }
     .action-buttons a:hover {
-      background-color: #45a049;
+      background-color: #007AB3;
     }
 
     /* Form */
@@ -109,31 +123,41 @@
     }
     form button {
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #00AEEF;
       color: white;
       border: none;
       cursor: pointer;
     }
     form button:hover {
-      background-color: #45a049;
+      background-color: #007AB3;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="jain-logo.png" alt="Jain University Logo">
-  <span>APPLIED RESEARCH TECHNIQUES</span>
-</header>
+<!-- ============================
+     BLUE SOC HEADER
+============================ -->
+<div class="soc-header">
+  <img src="SOC Logo.png" alt="Jain School of Commerce Logo" class="soc-logo">
 
-<div class="course-info">
-  <strong>Semester:</strong> First &nbsp;&nbsp; | &nbsp;&nbsp;
-  <strong>Course Code:</strong> M.Com &nbsp;&nbsp; | &nbsp;&nbsp;
-  <strong>Credits:</strong> 4 &nbsp;&nbsp; | &nbsp;&nbsp;
-  <strong>No. of Hours:</strong> 60
+  <div class="soc-title">
+    <div class="main-title">APPLIED RESEARCH TECHNIQUES</div>
+    <div class="sub-title">School of Commerce – PG Studies</div>
+
+    <div class="course-meta">
+      <span><strong>Semester:</strong> I</span>
+      <span><strong>Course Code:</strong> M.Com</span>
+      <span><strong>Credits:</strong> 4</span>
+      <span><strong>No. of Hours:</strong> 60</span>
+    </div>
+  </div>
 </div>
 
+<!-- ============================
+          TABS
+============================ -->
 <div class="tabs">
   <button class="tab-link active" data-tab="syllabus">Syllabus</button>
   <button class="tab-link" data-tab="tlep">TLEP</button>
@@ -144,6 +168,10 @@
   <button class="tab-link" data-tab="module5">Module 5</button>
   <button class="tab-link" data-tab="queries">Queries</button>
 </div>
+
+<!-- ============================
+          TAB CONTENTS
+============================ -->
 
 <!-- SYLLABUS -->
 <div id="syllabus" class="tab-content active">
@@ -236,6 +264,9 @@
   </div>
 </div>
 
+<!-- ============================
+     JAVASCRIPT CONTROLLER
+============================ -->
 <script>
   const tabs = document.querySelectorAll(".tab-link");
   const contents = document.querySelectorAll(".tab-content");
