@@ -14,12 +14,12 @@
     }
 
     /* ============================
-       SOC BLUE HEADER (Centered)
+       SOC BLUE HEADER (CENTERED)
     ============================ */
     .soc-header {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr; /* Left | Center | Right */
       align-items: center;
-      gap: 20px;
       padding: 18px 20px;
       background: #00AEEF;
       color: white;
@@ -29,15 +29,22 @@
     .soc-logo {
       height: 70px;
       width: auto;
+      grid-column: 1;
+      justify-self: start;
     }
 
-    .soc-title .main-title {
+    .soc-title {
+      grid-column: 2;
+      text-align: center;
+    }
+
+    .main-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: 0.5px;
     }
 
-    .soc-title .sub-title {
+    .sub-title {
       font-size: 1rem;
       margin-top: 4px;
       opacity: 0.95;
@@ -52,7 +59,9 @@
       margin-right: 20px;
     }
 
-    /* Tabs */
+    /* ============================
+       TABS
+    ============================ */
     .tabs {
       display: flex;
       background-color: #333;
@@ -74,6 +83,9 @@
       background-color: #00AEEF;
     }
 
+    /* ============================
+       TAB CONTENT
+    ============================ */
     .tab-content {
       display: none;
       padding: 20px;
@@ -93,7 +105,9 @@
       border: none;
     }
 
-    /* Buttons */
+    /* ============================
+       BUTTONS
+    ============================ */
     .action-buttons {
       margin-top: 20px;
       text-align: center;
@@ -111,7 +125,9 @@
       background-color: #007AB3;
     }
 
-    /* Form */
+    /* ============================
+       QUERIES FORM
+    ============================ */
     form input, form textarea {
       width: 100%;
       padding: 8px;
@@ -137,7 +153,7 @@
 <body>
 
 <!-- ============================
-     BLUE SOC HEADER (centered)
+     SOC HEADER
 ============================ -->
 <div class="soc-header">
   <img src="SOC Logo.png" alt="Jain School of Commerce Logo" class="soc-logo">
@@ -156,7 +172,7 @@
 </div>
 
 <!-- ============================
-          TABS
+           TABS
 ============================ -->
 <div class="tabs">
   <button class="tab-link active" data-tab="syllabus">Syllabus</button>
@@ -170,7 +186,7 @@
 </div>
 
 <!-- ============================
-          TAB CONTENTS
+      TAB CONTENT SECTIONS
 ============================ -->
 
 <!-- SYLLABUS -->
@@ -265,7 +281,7 @@
 </div>
 
 <!-- ============================
-     JAVASCRIPT CONTROLLER
+     JAVASCRIPT LOGIC
 ============================ -->
 <script>
   const tabs = document.querySelectorAll(".tab-link");
