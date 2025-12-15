@@ -6,97 +6,86 @@
   <title>Applied Research Techniques - Course Page</title>
 
   <style>
-    body {  
+    body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
     }
 
-    /* ============================
-       SOC BLUE HEADER (CENTERED)
-    ============================ */
+    /* HEADER */
     .soc-header {
       display: grid;
-      grid-template-columns: 1fr auto 1fr; /* Left | Center | Right */
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       padding: 18px 20px;
       background: #00AEEF;
-      color: white;
+      color: #fff;
       border-bottom: 4px solid #007AB3;
     }
 
     .soc-logo {
       height: 70px;
-      width: auto;
-      grid-column: 1;
-      justify-self: start;
     }
 
     .soc-title {
-      grid-column: 2;
       text-align: center;
     }
 
     .main-title {
       font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
     }
 
     .sub-title {
       font-size: 1rem;
       margin-top: 4px;
-      opacity: 0.95;
     }
 
     .course-meta {
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 0.95rem;
     }
 
     .course-meta span {
-      margin-right: 20px;
+      margin-right: 15px;
+      white-space: nowrap;
     }
 
-    /* ============================
-       TABS
-    ============================ */
+    /* TABS */
     .tabs {
       display: flex;
-      background-color: #333;
+      background: #333;
       overflow-x: auto;
     }
+
     .tabs button {
-      flex: none;
-      background-color: inherit;
-      color: white;
-      padding: 14px 20px;
+      background: none;
       border: none;
+      color: #fff;
+      padding: 14px 20px;
       cursor: pointer;
       font-size: 1em;
     }
+
     .tabs button:hover {
-      background-color: #575757;
-    }
-    .tabs button.active {
-      background-color: #00AEEF;
+      background: #575757;
     }
 
-    /* ============================
-       TAB CONTENT
-    ============================ */
+    .tabs button.active {
+      background: #00AEEF;
+    }
+
+    /* CONTENT */
     .tab-content {
       display: none;
       padding: 20px;
-      background-color: white;
+      background: #fff;
       min-height: 600px;
-      opacity: 0;
-      transition: opacity 0.4s ease;
     }
+
     .tab-content.active {
       display: block;
-      opacity: 1;
     }
 
     iframe {
@@ -105,63 +94,57 @@
       border: none;
     }
 
-    /* ============================
-       BUTTONS
-    ============================ */
+    /* BUTTONS */
     .action-buttons {
-      margin-top: 20px;
       text-align: center;
+      margin-top: 20px;
     }
+
     .action-buttons a {
       display: inline-block;
       margin: 8px;
       padding: 10px 20px;
-      background-color: #00AEEF;
-      color: white;
+      background: #00AEEF;
+      color: #fff;
       text-decoration: none;
       border-radius: 5px;
     }
+
     .action-buttons a:hover {
-      background-color: #007AB3;
+      background: #007AB3;
     }
 
-    /* ============================
-       QUERIES FORM
-    ============================ */
+    /* FORM */
     form input, form textarea {
       width: 100%;
       padding: 8px;
-      margin-top: 4px;
-      margin-bottom: 12px;
+      margin: 6px 0 12px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      box-sizing: border-box;
     }
+
     form button {
       padding: 10px 20px;
-      background-color: #00AEEF;
-      color: white;
+      background: #00AEEF;
+      color: #fff;
       border: none;
       cursor: pointer;
     }
+
     form button:hover {
-      background-color: #007AB3;
+      background: #007AB3;
     }
   </style>
 </head>
 
 <body>
 
-<!-- ============================
-     SOC HEADER
-============================ -->
+<!-- HEADER -->
 <div class="soc-header">
-  <img src="SOC Logo.png" alt="Jain School of Commerce Logo" class="soc-logo">
-
+  <img src="SOC Logo.png" alt="SOC Logo" class="soc-logo">
   <div class="soc-title">
     <div class="main-title">APPLIED RESEARCH TECHNIQUES</div>
     <div class="sub-title">School of Commerce – PG Studies</div>
-
     <div class="course-meta">
       <span><strong>Semester:</strong> I</span>
       <span><strong>Course Code:</strong> M.Com</span>
@@ -171,9 +154,7 @@
   </div>
 </div>
 
-<!-- ============================
-           TABS
-============================ -->
+<!-- TABS -->
 <div class="tabs">
   <button class="tab-link active" data-tab="syllabus">Syllabus</button>
   <button class="tab-link" data-tab="tlep">TLEP</button>
@@ -185,106 +166,61 @@
   <button class="tab-link" data-tab="queries">Queries</button>
 </div>
 
-<!-- ============================
-      TAB CONTENT SECTIONS
-============================ -->
-
 <!-- SYLLABUS -->
 <div id="syllabus" class="tab-content active">
   <iframe src="syllabus.html"></iframe>
-
-  <div class="action-buttons">
-    <a href="syllabus.html" download>Download</a>
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
 </div>
 
 <!-- TLEP -->
 <div id="tlep" class="tab-content">
   <iframe src="tlep.html"></iframe>
-
-  <div class="action-buttons">
-    <a href="tlep.html" download>Download</a>
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
 </div>
 
 <!-- MODULE 1 -->
 <div id="module1" class="tab-content">
   <iframe src="https://drive.google.com/file/d/1aKnvHJ6ek-HCDuuklXfxc6A4JLoQbx0Z/preview"></iframe>
-
-  <div class="action-buttons">
-    <a href="https://drive.google.com/uc?export=download&id=1aKnvHJ6ek-HCDuuklXfxc6A4JLoQbx0Z">Download</a>
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
 </div>
 
 <!-- MODULE 2 -->
 <div id="module2" class="tab-content">
   <iframe src="https://drive.google.com/file/d/1Mr8NT5MH_mQDCLccIjb_97LhX_E9rYW3/preview"></iframe>
-
-  <div class="action-buttons">
-    <a href="https://drive.google.com/uc?export=download&id=1Mr8NT5MH_mQDCLccIjb_97LhX_E9rYW3">Download</a>
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
 </div>
 
 <!-- MODULE 3 -->
 <div id="module3" class="tab-content">
-  <iframe src="RMTeachingLearning - Module3.pdf"></iframe>
-
-  <div class="action-buttons">
-    <a href="RMTeachingLearning - Module3.pdf" download>Download</a>
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
+  <iframe src="RMTeachingLearning-Module3.pdf"></iframe>
 </div>
 
-<!-- MODULE 4 -->
+<!-- MODULE 4 (GITHUB PDF) -->
 <div id="module4" class="tab-content">
-  <iframe src="https://raw.githubusercontent.com/USERNAME/REPO/main/module4.pdf"></iframe>
+
+  <!-- 🔴 REPLACE THIS URL WITH YOUR ACTUAL RAW GITHUB URL -->
+  <iframe src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/module4.pdf"></iframe>
 
   <div class="action-buttons">
-    <a href="https://raw.githubusercontent.com/USERNAME/REPO/main/module4.pdf" download>
-      Download
+    <a href="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/module4.pdf" download>
+      Download Module 4
     </a>
-    <a href="#" onclick="returnToHome()">Home</a>
   </div>
 </div>
 
 <!-- MODULE 5 -->
 <div id="module5" class="tab-content">
   <p>Module 5 content coming soon.</p>
-
-  <div class="action-buttons">
-    <a href="#" download>Download</a>
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
 </div>
 
 <!-- QUERIES -->
 <div id="queries" class="tab-content">
   <h2>Submit Your Query</h2>
   <form action="https://formspree.io/f/xyznnljn" method="POST">
-    <label>Name:</label>
-    <input type="text" name="name" required>
-
-    <label>Email:</label>
-    <input type="email" name="_replyto" required>
-
-    <label>Your Query:</label>
-    <textarea name="query" required></textarea>
-
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="_replyto" placeholder="Email" required>
+    <textarea name="query" placeholder="Your query" required></textarea>
     <button type="submit">Submit</button>
   </form>
-
-  <div class="action-buttons">
-    <a href="#" onclick="returnToHome()">Home</a>
-  </div>
 </div>
 
-<!-- ============================
-     JAVASCRIPT LOGIC
-============================ -->
+<!-- SCRIPT -->
 <script>
   const tabs = document.querySelectorAll(".tab-link");
   const contents = document.querySelectorAll(".tab-content");
@@ -297,14 +233,6 @@
       document.getElementById(tab.dataset.tab).classList.add("active");
     });
   });
-
-  function returnToHome() {
-    contents.forEach(c => c.classList.remove("active"));
-    tabs.forEach(t => t.classList.remove("active"));
-
-    document.getElementById("syllabus").classList.add("active");
-    document.querySelector('[data-tab="syllabus"]').classList.add("active");
-  }
 </script>
 
 </body>
