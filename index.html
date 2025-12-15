@@ -9,7 +9,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
     }
 
     /* HEADER */
@@ -53,7 +53,7 @@
     /* TABS */
     .tabs {
       display: flex;
-      background: #333;
+      background-color: #333;
       overflow-x: auto;
     }
 
@@ -67,18 +67,18 @@
     }
 
     .tabs button:hover {
-      background: #575757;
+      background-color: #575757;
     }
 
     .tabs button.active {
-      background: #00AEEF;
+      background-color: #00AEEF;
     }
 
     /* CONTENT */
     .tab-content {
       display: none;
       padding: 20px;
-      background: white;
+      background-color: white;
       min-height: 600px;
     }
 
@@ -102,14 +102,14 @@
       display: inline-block;
       margin: 8px;
       padding: 10px 20px;
-      background: #00AEEF;
+      background-color: #00AEEF;
       color: white;
       text-decoration: none;
       border-radius: 5px;
     }
 
     .action-buttons a:hover {
-      background: #007AB3;
+      background-color: #007AB3;
     }
 
     /* FORM */
@@ -123,14 +123,14 @@
 
     form button {
       padding: 10px 20px;
-      background: #00AEEF;
+      background-color: #00AEEF;
       color: white;
       border: none;
       cursor: pointer;
     }
 
     form button:hover {
-      background: #007AB3;
+      background-color: #007AB3;
     }
   </style>
 </head>
@@ -139,7 +139,7 @@
 
 <!-- HEADER -->
 <div class="soc-header">
-  <img src="SOC Logo.png" class="soc-logo" alt="SOC Logo">
+  <img src="SOC Logo.png" alt="SOC Logo" class="soc-logo">
   <div class="soc-title">
     <div class="main-title">APPLIED RESEARCH TECHNIQUES</div>
     <div class="sub-title">School of Commerce – PG Studies</div>
@@ -195,41 +195,4 @@
 <!-- MODULE 4 -->
 <div id="module4" class="tab-content">
   <iframe src="module4.pdf"></iframe>
-  <div class="action-buttons">
-    <a href="module4.pdf" download>Download Module 4</a>
-  </div>
-</div>
-
-<!-- MODULE 5 -->
-<div id="module5" class="tab-content">
-  <p>Module 5 content coming soon.</p>
-</div>
-
-<!-- QUERIES -->
-<div id="queries" class="tab-content">
-  <h2>Submit Your Query</h2>
-  <form action="https://formspree.io/f/xyznnljn" method="POST">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="_replyto" placeholder="Email" required>
-    <textarea name="query" placeholder="Your query" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-
-<!-- SCRIPT -->
-<script>
-  const tabs = document.querySelectorAll(".tab-link");
-  const contents = document.querySelectorAll(".tab-content");
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      contents.forEach(c => c.classList.remove("active"));
-      tab.classList.add("active");
-      document.getElementById(tab.dataset.tab).classList.add("active");
-    });
-  });
-</script>
-
-</body>
-</html>
+  <div class="action-butt
