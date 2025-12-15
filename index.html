@@ -188,19 +188,17 @@
 
 <!-- MODULE 3 -->
 <div id="module3" class="tab-content">
-  <iframe src="RMTeachingLearning-Module3.pdf"></iframe>
+  <iframe src="module3.pdf"></iframe>
+  <div class="action-buttons">
+    <a href="module3.pdf" download>Download Module 3</a>
+  </div>
 </div>
 
-<!-- MODULE 4 (GITHUB PDF) -->
+<!-- MODULE 4 -->
 <div id="module4" class="tab-content">
-
-  <!-- 🔴 REPLACE THIS URL WITH YOUR ACTUAL RAW GITHUB URL -->
-  <iframe src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/module4.pdf"></iframe>
-
+  <iframe src="module4.pdf"></iframe>
   <div class="action-buttons">
-    <a href="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/module4.pdf" download>
-      Download Module 4
-    </a>
+    <a href="module4.pdf" download>Download Module 4</a>
   </div>
 </div>
 
@@ -225,15 +223,4 @@
   const tabs = document.querySelectorAll(".tab-link");
   const contents = document.querySelectorAll(".tab-content");
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      contents.forEach(c => c.classList.remove("active"));
-      tab.classList.add("active");
-      document.getElementById(tab.dataset.tab).classList.add("active");
-    });
-  });
-</script>
-
-</body>
-</html>
+  tabs.forEach(tab =>
